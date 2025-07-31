@@ -140,14 +140,14 @@ nav {
 }
 
 .locations {
-  display: flex;
-  justify-content: center;
-  gap: 5rem;
-  padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 2rem;
 }
 
 .location {
-  text-align: center;
+    text-align: center;
 }
 
 .location p {
@@ -155,26 +155,87 @@ nav {
 }
 
 .circle {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid black;
-  margin: auto;
-  background-color: white;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    margin: auto;
+    background-color: white;
 }
 
 .circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
+.form-input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    transform: translateY(-5rem);
+}
+
+form, .form-result {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+
+.form-group {
+    padding-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    padding-bottom: .3rem;
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    font-size: 1rem;
+    background-color: #EA5B6F;
+    color: white;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #c94c60;
+}
+
+.form-result hr {
+    border: none;
+    height: 2px;
+    background: black;
+    margin: 0.5rem 0;   
+}
+
+.form-result span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
 
 /* Footer */
 .footer p {
