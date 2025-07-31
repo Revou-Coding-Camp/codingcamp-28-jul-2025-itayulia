@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revou | My Website</title>
 
+    <!-- Link to Flatpickr (Custom Date Picker) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <!-- Link to CSS Styles -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -12,114 +15,143 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <section id="hero-section">
-        <nav>
-            <a href="#"><img src="assets/tomato.png" id="icon" alt="Tomato Icon"></a>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <img src="assets/tomato.png" id="icon" alt="Tomato Icon">
+        </a>
 
-            <ul class="nav-links">
-                <li><a href="#hero-section">Home</a></li>
-                <li><a href="#about-section">Our Profile</a></li>
-                <li><a href="#">Portofolio</a></li>
-                <li><a href="#message-us">Message Us</a></li>
-            </ul>
-        </nav>
-        <hr>
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#about">Profile</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact" class="say-hello-btn">Say Hello</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
         <div class="hero-text">
-            <div class="hero-text-content">
-                <h1>Hi <span id="name"></span>, Welcome to Website</h1>
-                <p>Ini adalah website latihan pertama</p>
-            </div>
+            <h1>Welcome <span id="name-input" class="code-style">Name</span>, Fellow Coder!</h1>
+            <p>// I build simple codes
+                <br>// I value thoughtful learning
+                <br>// Every line of code tells a story
+            </p>
+        </div>
+        <div class="hero-image">
+            <img src="assets/banner.jpeg" alt="Profile Banner">
+        </div>
+    </section>
 
-            <div class="hero-banner">
-                <img src="assets/banner.jpeg" alt="Photo banner">
+    <!-- Profile Section -->
+    <section id="about" class="profile">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="assets/girl-icon.png" alt="Girl icon" class="profile-pic">
+            </div>
+            <div class="profile-content">
+                <h2>Hi, I'm Ita. <span class="wave">👋</span></h2>
+                <h3 class="tagline">Great to meet you here.</h3>
+                
+                <div class="journey">
+                    <p>My journey began as an administrative professional, but I felt stuck and hungry to learn something new that would challenge me to grow continuously.</p>
+                    <p>Then I discovered my passion for backend engineering - it's like cleaning and organizing data, just like how I love keeping my home tidy! There's something deeply satisfying about preparing clean, structured data before it goes into the database.</p>
+                    <p class="highlight">I'm naturally adaptive and would love the opportunity to work together as partners!</p>
+                </div>
+                
+                <div class="fun-fact">
+                    <img src="assets/cleaning-icon.png" alt="Cleaning icon" class="fun-icon">
+                    <p>Fun fact: My data cleaning skills are as strong as my home cleaning skills!</p>
+                </div>
             </div>
         </div>
     </section>
-    <hr>
 
-    <section id="about-section">
-        <div class="about-headquarter">
-            <h2>Our Headquarter</h2>
-
-            <div class="locations">
-                <div class="location">
-                    <div class="circle">
-                        <img src="assets/jakarta-logo.jpeg" alt="Jakarta Logo">
-                    </div>
-                    <p>Jakarta</p>
-                </div>
-
-                <div class="location">
-                    <div class="circle">
-                        <img src="assets/bandung-logo.jpeg" alt="Bandung Logo">
-                    </div>
-                    <p>Bandung</p>
-                </div>
-
-                <div class="location">
-                    <div class="circle">
-                        <img src="assets/surabaya-logo.jpeg" alt="Surabaya Logo">
-                    </div>
-                    <p>Surabaya</p>
-                </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-text">
+            <h2>My Recent Work</h2>
+            <p>Here are projects I've worked on.</p>
+        </div>
+        <div class="portfolio-items">
+            <div class="project">
+                <h3>PROJECT<br>1</h3>
             </div>
+            <div class="project">
+                <h3>PROJECT<br>2</h3>
+            </div>
+            <div class="project">
+                <h3>PROJECT<br>3</h3>
+            </div>
+        </div>
+        <div class="portfolio-footer">
+            <a href="https://github.com/itayulia" target="_blank" class="github-link">See the codes on Github</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-text">
+            <h2>Glad you stopped by!</h2>
+            <p>Need a hand with something?</p>
         </div>
         
-        <div class="about-message" id="message-us">
-            <h2>Message Us</h2>
-
-            <div class="form-input">
-                <form class="message-form">
+        <div class="contact-container">
+            <form class="contact-form">
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Nama :</label>
-                        <input type="text" id="name" name="name" placeholder="Nama">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-
+                    
                     <div class="form-group">
-                        <label for="dob">Tanggal Lahir :</label>
-                        <input type="date" id="dob" name="dob">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-
-                    <div class="form-group">
-                        <label>Jenis Kelamin :</label>
-                        <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
-                        <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Pesan :</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-
-                    <button type="submit">Submit</button>
-                </form>
-
-                <div class="form-result">
-                    <p><strong>Current time :</strong></p><span id="date"></span>
-                    <br><hr><br>
-
-                    <p><strong>Nama :</strong></p>
-                    <span id="nama">Ita</span><br>
-
-                    <p><strong>Tanggal Lahir :</strong></p>
-                    <span id="tanggal-lahir">15 Juli 1991</span><br>
-
-                    <p><strong>Jenis Kelamin :</strong></p>
-                    <span id="jenis-kelamin">Perempuan</span><br>
-
-                    <p><strong>Pesan :</strong></p>
-                    <span id="pesan">Ada apa hayooo</span>
                 </div>
-            </div>
-        </div>
-        <hr>
 
-        <footer>
-            <div class="footer">
-                <p>	&copy; Created by Ita</p>
-            </div>
-        </footer>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" class="date-input" id="dob" name="dob" placeholder="Select Date">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="gender" value="male" checked>
+                            <span>Male</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            <span>Female</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Created by Ita</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 </html>
