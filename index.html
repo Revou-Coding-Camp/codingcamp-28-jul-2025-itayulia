@@ -12,40 +12,70 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div id="hero-section">
-        <header id="header">
-            <nav>
-                <img src="assets/tomato.png" id="icon" alt="Tomato Icon">
+    <section id="hero-section">
+        <nav>
+            <a href="#"><img src="assets/tomato.png" id="icon" alt="Tomato Icon"></a>
 
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Profile</a></li>
-                    <li><a href="#">Portofolio</a></li>
-                    <li><a href="#">Message Us</a></li>
-                </ul>
-            </nav>
-        </header>
+            <ul class="nav-links">
+                <li><a href="#hero-section">Home</a></li>
+                <li><a href="#about-section">Our Profile</a></li>
+                <li><a href="#">Portofolio</a></li>
+                <li><a href="#">Message Us</a></li>
+            </ul>
+        </nav>
         <hr>
 
-        <section id="hero-text">
-            <div id="hero-welcome">
+        <div class="hero-text">
+            <div class="hero-text-content">
                 <h1>Hi <span id="name"></span>, Welcome to Website</h1>
                 <p>Ini adalah website latihan pertama</p>
             </div>
 
-            <div id="hero-banner">
+            <div class="hero-banner">
                 <img src="assets/banner.jpeg" alt="Photo banner">
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
     <hr>
 
-    <div id="about-section">
+    <section id="about-section">
+        <div class="about-headquarter">
+            <h2>Our Headquarter</h2>
+
+            <div class="locations">
+                <div class="location">
+                    <div class="circle">
+                        <img src="assets/jakarta-logo.jpeg" alt="Jakarta Logo">
+                    </div>
+                    <p>Jakarta</p>
+                </div>
+
+                <div class="location">
+                    <div class="circle">
+                        <img src="assets/bandung-logo.jpeg" alt="Bandung Logo">
+                    </div>
+                    <p>Bandung</p>
+                </div>
+
+                <div class="location">
+                    <div class="circle">
+                        <img src="assets/surabaya-logo.jpeg" alt="Surabaya Logo">
+                    </div>
+                    <p>Surabaya</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-message">
+            <h2>Message Us</h2>
+        </div>
+        <hr>
+
         <footer>
-            <div id="footer">
-                <p>Created by Ita</p>
+            <div class="footer">
+                <p>	&copy; Created by Ita</p>
             </div>
         </footer>
-    </div>
+    </section>
 </body>
 </html>
