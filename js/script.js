@@ -175,9 +175,15 @@ function initForm() {
     });
 }
 
+// Initialize footer
+function initFooter() {
+    document.querySelector('.current-year').textContent = new Date().getFullYear();
+}
+
 // Event listeners
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initDatePicker();
     initForm();
+    initFooter();
 });
