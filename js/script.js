@@ -48,6 +48,78 @@ function validateInputs(name, email, dob, message, genderSelected) {
     return isValid;
 }
 
+// Show inputted data in a modal
+function showDataInputs(name, email, dob, message, genderSelected) {
+    const modal = document.createElement('div');
+    modal.className = 'form-modal';
+
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+
+    const escapeHTML = (str) => {
+        if (!str) return;
+
+        return str.toString()
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    };
+
+    const safeName = escapeHTML(name.value.trim());
+    const safeEmail = escapeHTML(email.value.trim());
+    const safeDob = escapeHTML(dob.value.trim());
+    const safeMessage = escapeHTML(message.value.trim());
+    const safeGender = genderSelected ? escapeHTML(genderSelected.value) : 'Not selected';
+
+    const content = document.createElement('div');
+    const title = document.createElement('h2');
+    title.textContent = 'Your Form Submission';
+
+    const namePara = document.createElement('p');
+    namePara.textContent = `Name: ${safeName}`;
+    
+    const emailPara = document.createElement('p');
+    emailPara.textContent = `Email: ${safeEmail}`;
+    
+    const dobPara = document.createElement('p');
+    dobPara.textContent = `Date of Birth: ${safeDob}`;
+    
+    const genderPara = document.createElement('p');
+    genderPara.textContent = `Gender: ${safeGender}`;
+    
+    const messagePara = document.createElement('p');
+    messagePara.textContent = `Message: ${safeMessage}`;
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Close';
+    closeBtn.className = 'modal-close-btn';
+
+    content.appendChild(title);
+    content.appendChild(namePara);
+    content.appendChild(emailPara);
+    content.appendChild(dobPara);
+    content.appendChild(genderPara);
+    content.appendChild(messagePara);
+    content.appendChild(closeBtn);
+
+    modal.appendChild(content);
+    document.body.appendChild(overlay);
+    document.body.appendChild(modal);
+
+    document.body.insertBefore(overlay, document.body.firstChild);
+    document.body.insertBefore(modal, document.body.firstChild);
+
+    const closeModal = () => {
+        document.body.removeChild(modal);
+        document.body.removeChild(overlay);
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+}
+
 // Initialize mobile navigation menu
 function initMobileMenu() {
     const toggleBtn = document.querySelector('.mobile-menu-toggle');
@@ -91,21 +163,20 @@ function initForm() {
     const email = document.getElementById('email');
     const dob = document.getElementById('dob');
     const message = document.getElementById('message');
-    const submitBtn = document.querySelector('.submit-btn');
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const genderSelected = document.querySelectorAll('input[name="gender"]:checked');
+        const genderSelected = document.querySelector('input[name="gender"]:checked');
 
         if (validateInputs(name, email, dob, message, genderSelected)) {
-            alert('Form submitted successfully!');
+            showDataInputs(name, email, dob, message, genderSelected);
         }
     });
 }
 
 // Event listeners
-document.addEventListener('DOMContentLoaded', function(e) {
+document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initDatePicker();
     initForm();
